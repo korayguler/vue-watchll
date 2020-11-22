@@ -1,14 +1,10 @@
 <template>
   <div class="card">
-    <img
-      class="card-img-top"
-      src="https://images.unsplash.com/photo-1605885178292-1eb68e3fe93f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-      alt="Card image cap"
-    />
+    <img class="card-img-top" :src="poster" alt="Card image cap" />
     <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
+      <h5 class="card-title">{{ name }}</h5>
       <div class="card-text">
-        {{ text }}
+        <span class="badge badge-dark"> {{ category }}</span>
       </div>
     </div>
     <div class="card-footer bg-white">
@@ -76,7 +72,7 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['name', 'category', 'poster'],
+};
 </script>
-
-<style></style>
